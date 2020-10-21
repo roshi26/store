@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block page_content %}
+<html>
+<h1>promotions update</h1>
+<form method="post">
+	{% csrf_token %}
+	{{form.as_p}}
+<input type="submit" class ="btn btn-danger" value="update record">
+</form>
+{% endblock %}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block page_content %}
+
+{% load static %}
+<html>
+<head>
+
+
+
+<h1>employee list</h1>
+<div class= "row">
+	<div class="col-md-4">
+		<div class="card mb-2">
+			<div class="card-body">
+        
+				{% if employees %}
+				<table>
+					<table border="3">
+						<thead>
+							<th>first_name</th>
+							<th>last_name</th>
+                            <th>id_number</th>
+                            <th>phone_number</th>
+                            <th>job_title</th>
+                            <th>department</th>
+                            <th>email</th>
+                            <th>location</th>
+                            <th>start_date</th>
+                            <th>end_date</th>
+                            </thead>
+                            {% for x in employees %}
+                            <tr>
+                            	<td>{{x.first_name}}</td>
+                            	<td>{{x.last_name}}</td>
+                            	<td>{{x.id_number}}</td>
+                            	<td>{{x.phone_number}}</td>
+                            	<td>{{x.job_title}}</td>
+                            	<td>{{x.department}}</td>
+                            	<td>{{x.email}}</td>
+                            	<td>{{x.location}}</td>
+                            	<td>{{x.start_date}}</td>
+                            	<td>{{x.end_date}}</td>
+                            	<td>
+                            		<a href='/update/{{x.pk}}' class='btn btn-warning'>update</a>  
+                            		<a href='/delete/{{x.pk}}' class ='btn btn-warning'>delete</a>
+                                    <a href='/detail/{{x.pk}}' class='btn btn-warning'>detail</a> 
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                        {% endif %}
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</head>
+</html>
+{% endblock %}

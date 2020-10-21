@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %}
+
+
+{% block page_content %}
+
+<div class="row">
+    <div class="col-sm-8">
+        <p>
+            <div class="float-left"><h3>List of employees</h3></div>
+        
+        </p>
+        <div class="table-responsive-sm">
+        {% if users %}
+            <table class="table table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Name</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                     <tr>
+                    
+
+                </thead>
+                <tbody>
+                {% for user in users %}
+                    <tr>
+                        <th scope="row">
+                            {{user.first_name}} {{user.last_name}}</th>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-primary" href="{%  url 'employee_details' user.pk %}">Details</a>
+                            <a class="btn btn-warning" href="{%  url 'employee_update' user.pk %}">Update</a>
+                            <a class="btn btn-danger" href="{%  url 'employee_delete' user.pk %}">Delete</a>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+                </table>
+        {% else %}
+            <p>There is no employee available.</p>
+        {% endif %}
+    </tr>
+</thead>
+</table>
+</div>
+</div>
+</div>
+</html>
+
+{% endblock  %}

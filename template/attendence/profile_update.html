@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<body>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+   
+<table>
+    <form method="post">
+        {% csrf_token %}
+            {{form.as_p}}
+        </table>
+        <br>
+        <input type="submit" class="btn btn-warning" value="submit">
+    </form>
+
+</body>
+</head>
+</html>

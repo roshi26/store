@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<style>
+	body{
+		background-color: #80ced6;
+	}
+</style>
+<head>
+<body>
+<h1 style ="color:green">Welcome,</h1>
+<ul>
+{% for Attendence in x %}
+
+<tr>
+{{Attendence.signin_time}}<td>signin time</td>
+{{v_date}}
+<br><br>
+
+{{Attendence.signout_time}}<td>signout time</td>
+{{v_date}}
+<br><br>
+
+</tr>
+<div>
+<a class="btn btn-warning" href="{% url 'my_profile' %}">back</a>
+</div>
+{% endfor %}
+</ul>
+</body>
+</html>

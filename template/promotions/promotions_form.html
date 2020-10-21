@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block page_content %}
+{% load static %}
+<html>
+<h1>promotions</h1>
+<head>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<form method="post">
+	{% csrf_token %}
+	{{form.as_p}}
+<input type="submit" class="btn btn-danger" value="Submit">
+</form>
+</body>
+</html>
+{% endblock %}

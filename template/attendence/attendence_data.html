@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<title>test</title>
+<style>
+	body{
+		background-color: #92a8d1;
+	
+	}
+	button{
+			margin-left: 30px;
+			margin-right: 50px;
+			margin-top: 50px;
+			width: 100px;
+			height: 30px;
+
+		}
+</style>
+<head>
+<body>
+<h1 style ="color:green">Welcome ,</h1>
+<ul>
+
+<hi>sign in time</hi>
+<br><br>
+
+ <script type="text/javascript"> 
+        var myDate = new Date(); 
+        var myDay = myDate.getDay(); 
+         
+        
+       
+        var hours = myDate.getHours(); 
+        var ampm = hours >= 12 ? 'PM' : 'AM'; 
+        hours = hours % 12; 
+        hours = hours ? hours : 12; 
+        var minutes = myDate.getMinutes(); 
+        minutes = minutes < 10 ? '0' + minutes : minutes; 
+        var myTime = hours + " " + ampm + " : " + minutes +  
+            " : " + myDate.getMilliseconds(); 
+        document.write( myTime); 
+    </script>
+
+
+<br><br>
+<div >	
+<button onclick= "location.href='http://127.0.0.1:8000/signout/';">signout</button>
+</div>
+</ul>
+</body>
+</html>

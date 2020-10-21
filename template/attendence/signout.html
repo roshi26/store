@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<center>
+	<h1>signout</h1>
+</center>
+	
+	<style>
+		 body{
+            background-color: #ADD8E6;
+            color:green;
+            background-size: cover;
+            position: center;
+        }
+		button{
+			margin-left: 70px;
+			margin-right: 50px;
+			margin-top: 50px;
+			width: 100px;
+			height: 30px;
+
+		}
+	</style>
+	
+	
+<body>
+	<center>
+        <p>sign out time</p>
+	 <script type="text/javascript"> 
+        var myDate = new Date(); 
+        var myDay = myDate.getDay(); 
+         
+         
+        var hours = myDate.getHours(); 
+        var ampm = hours >= 12 ? 'PM' : 'AM'; 
+        hours = hours % 12; 
+        hours = hours ? hours : 12; 
+        var minutes = myDate.getMinutes(); 
+        minutes = minutes < 10 ? '0' + minutes : minutes; 
+        var myTime = hours + " " + ampm + " : " + minutes +  
+            " : " + myDate.getMilliseconds(); 
+        document.write( myTime); 
+    </script>
+</center>
+<div style="text-align: center;">	
+<button onclick= "location.href='http://127.0.0.1:8000/logout/';">logout</button>
+</div>
+</body>
+</head>
+</html>

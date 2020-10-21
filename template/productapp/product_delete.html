@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block page_content %}
+<html>
+<head>
+</head>
+<body>
+<h1>product delete</h1>
+<form method="post">
+	{% csrf_token %}
+	{{form.as_p}}
+	<p>do you want to delete? "{{object}}"</p>
+	<input type="submit" value="confirm">
+	
+</form>
+</body>
+</html>
+{% endblock %}

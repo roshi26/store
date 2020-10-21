@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block page_content %}
+
+{% load static %}
+<html>
+<h1>employee</h1>
+<head>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<h1>employee view </h1>
+<form method="post">
+	{% csrf_token %}
+	{{form.as_p}}
+<input type="submit" class="btn btn-danger" value="Submit">
+
+</form>
+</body>
+</html>
+{% endblock %}

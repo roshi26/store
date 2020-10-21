@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<h1>Employee Registration Form</h1>
+</head>
+<body>
+<form method="post">
+	{% csrf_token %}
+	{{form.as_p}}
+	<input type="submit" class="btn btn-danger" value="submit">
+</form>
+</body>
+</html>

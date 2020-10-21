@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block page_content %}
+{% load static %}
+<html>
+<head>
+
+
+<h1>coupon list</h1>
+<div class= "col">
+    <div class="col-md-20">
+        <div class="card mb-15">
+            <div class="card-body">
+            {% if coupons %}
+            <table>
+                <table border="3">
+                    <thead>
+                        <th>expiry_date</th>
+                        <th>coupon_number</th>
+                        <th>issue_by</th>
+                        <th>issue_to</th>
+                        <th>created_by</th>
+                        <th>recieve_by</th>
+                        <th>product</th>
+                    </thead>
+                    {% for x in coupons %}
+                    <tr>
+                        <td>{{x.expiry_date}}</td>
+                        <td>{{x.coupon_number}}</td>
+                        <td>{{x.issue_by}}</td>
+                        <td>{{x.issue_to}}</td>
+                        <td>{{x.created_by}}</td>
+                        <td>{{x.recieve_by}}</td>
+                        <td>{{x.product}}</td>
+                        <td>
+                            <a href='/couupdate/{{x.id}}' class='btn btn-warning'>update</a> 
+                            <a href='/coudelete/{{x.id}}' class ='btn btn-warning'>delete</a>
+                            <a href='/coudetail/{{x.id}}' class='btn btn-warning'>detail</a> 
+                        </td>
+                    </tr>
+                {%endfor%}
+            </table>
+        {% endif %}
+    </table>
+</div>
+</div>
+</div>
+</div>
+</head>
+</html>
+{% endblock %}

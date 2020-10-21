@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block page_content %}
+
+<h2>login</h2>
+<form method="post">
+	{% csrf_token %}
+	{{form.as_p}}
+	<input type="submit" value="login">
+</form>
+<a href = "{% url 'dashboard' %}">back</a>
+<a href = "{% url 'password_reset' %}">reset password</a>
+<a href ="{% url 'login' %}">register</a>
+
+
+{% endblock %}

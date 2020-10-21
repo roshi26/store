@@ -1,0 +1,46 @@
+{% extends 'admin/base_site.html' %}
+{% block title %}{{ title }} | {{site_title| default:_('Django site admin')}}{% endblock %}
+{% block branding %}
+
+<h1 id="site-name"><a href = "{% url 'admin:index' %}">STORE MANAGEMENT</a></h1>
+
+
+
+
+<h1><a href="/payroll" class="btn btn-success"></a></h1>
+
+
+
+<style>
+  #a1{
+  	margin-left: 140%;
+  	margin-top: -15px;
+
+
+  }	
+
+  #a2{
+  	margin-left: 140%;
+  	margin-top: 20px;
+  }
+
+  #a3{
+    margin-left: 140%;
+    margin-top: 20px;
+  }
+</style>
+
+
+<form action = "/payroll" method="get" id="employee_id">
+	{% csrf_token %}
+	  
+	<input type="submit" id="a1" value=" generate payroll">
+	<input type="textbox" name="employee_id" value="10" id="a2">
+  <input type="date" name="date" value="2020-10-06" id="a3">
+
+	
+	
+
+	</form>
+
+{% endblock %}

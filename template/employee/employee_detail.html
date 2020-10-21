@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block page_content %}
+<html>
+<head>
+<body>
+<h1>employee detail</h1>
+<p>{{emp.first_name}}</p>
+<p>{{last_name}}</p>
+<p>{{emp.id_number}}</p>
+<p>{{emp.phone_number}}</p>
+<p>{{emp.job_title}}</p>
+<p>{{emp.department}}</p>
+<p>{{emp.email}}</p>
+<p>{{emp.location}}</p>
+<p>{{emp.start_date}}</p>
+<p>{{emp.end_date}}</p>
+</body>
+</head>
+</html>
+{% endblock %}

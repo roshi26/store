@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %}
+{% block page_content %}
+<body>
+    <h1>employee detail</h1>
+    <p>{{user.first_name}}</p>
+    <p>{{user_name}}</p>
+    <p>{{user.id_number}}</p>
+    <p>{{user.phone_number}}</p>
+    <p>{{user.job_title}}</p>
+    <p>{{user.department}}</p>
+    <p>{{user.email}}</p>
+    <p>{{user.location}}</p>
+    <p>{{user.start_date}}</p>
+    <p>{{user.end_date}}</p>
+    <div style="float: left; width: 130px">
+    	<a class="btn btn-warning" href="{% url 'my_profile' %}">back</a>
+    </div>
+</body>
+</html>
+{% endblock  %}
