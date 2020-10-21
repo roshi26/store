@@ -67,11 +67,6 @@ class CustomerAPI(generics.GenericAPIView):
 
     def post(self,request):
         
-        try:
-            location=request.data
-            print(location['location'])
-            Customers.objects.get(location=location['location'])
-        except Customers.DoesNotExist:
 
         serializer=CustomerSerializer(data=request.data)
         if serializer.is_valid():
@@ -83,10 +78,11 @@ class CustomerAPI(generics.GenericAPIView):
 
             stripe.Charge.create(
                     amount=2000,currency="inr",source="tok_mastercard",description="My First Test Charge (created for API docs)",)
+            
             send_email_task.delay()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         
-        else:
+    
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
 

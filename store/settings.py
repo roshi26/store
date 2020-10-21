@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework.authtoken',
     'django_rest_passwordreset',
+    'kronos',
   
 
 ]
@@ -154,11 +155,11 @@ CELERY_BROKER_URL='redis://127.0.0.1:6379/0'
 CELERY_ACCEPT_CONTENT=['json']
 CELERY_TASK_SERIALIZER='json'
 
-EMAIL_HOST= 'smtp.fastmail.com'
-EMAIL_PORT= 465
+EMAIL_HOST= 'smtp.gmail.com'
+EMAIL_PORT= 587
 EMAIL_HOST_USER= 'roshidubey2602@gmail.com'
 EMAIL_HOST_PASSWORD='vandanaroshi2602'
-EMAIL_USE_TLS=False
-EMAIL_USE_SSL=True
+EMAIL_USE_TLS= True
 
-EMAIL_BACKEND= 'django.core.mail.backends.console.EmailBackend' 
+
+EMAIL_BACKEND= 'django.core.mail.backends.smtp.EmailBackend' 

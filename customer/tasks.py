@@ -8,8 +8,10 @@ def send_email_task():
 	send_mail('CELERY WORKED!',
 		'this is the proof',
 		'roshidubey2602@gmail.com',
-		['roshidubey2602@gmail.com'])
-	return None
+		['roshidubey2602@gmail.com'],
+		fail_silently=False,
+
+		)
 
 
 		

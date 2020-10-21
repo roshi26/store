@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "770b0ef36548487140f67a887408f0ef3de781e71225ca680633fb178fc75241"
+            "sha256": "4e12daee4cbec1bf1eef4adbd002b78e4202832e9ff04f3c75fef35246467295"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -87,6 +87,13 @@
             "index": "pypi",
             "version": "==3.1.2"
         },
+        "django-kronos": {
+            "hashes": [
+                "sha256:04899ccaaa36d46f7d171efc3b5da9ac58596cb52e53c6e80c5c86b72f2b23b8"
+            ],
+            "index": "pypi",
+            "version": "==1.0"
+        },
         "idna": {
             "hashes": [
                 "sha256:b307872f855b18632ce0c21c5e45be78c0ea7ae4c15c828c20788b26921eb3f6",
@@ -107,6 +114,19 @@
                 "sha256:7debb9a521e0b1ee7d2fe96ee4bd60ef03c6492784de0547337ca4433e46aa63"
             ],
             "version": "==3.0.8"
+        },
+        "python-crontab": {
+            "hashes": [
+                "sha256:4bbe7e720753a132ca4ca9d4094915f40e9d9dc8a807a4564007651018ce8c31"
+            ],
+            "version": "==2.5.1"
+        },
+        "python-dateutil": {
+            "hashes": [
+                "sha256:73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c",
+                "sha256:75bb3f31ea686f1197762692a9ee6a7550b59fc6ca3a1f4b5d7e32fb98e2da2a"
+            ],
+            "version": "==2.8.1"
         },
         "pytz": {
             "hashes": [
