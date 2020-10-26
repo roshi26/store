@@ -1,0 +1,31 @@
+{% load rest_framework %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<center>
+<body>
+	<style>
+		body{
+			background-color: #ffe6e6;
+		}
+	</style>
+	<h1>CART</h1>
+<form method="POST" action="{% url 'cartitem' %}">
+
+            {% csrf_token %}
+            {% render_form serializer %}
+        <br><br>
+            <input type="submit" class="btn btn-success"></button>
+        </form>
+        <a href='/customer/api/cartitem/update/19' class="btn btn-warning"> update</a> 
+        
+<a href='/customer/api/cartitem/delete/19' class ="btn btn-warning">delete</a>
+
+
+</body>
+</center>
+{% endblock content %}
+</html>

@@ -28,15 +28,16 @@ from promotions import views
 from customer import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('employee.urls')),
-    path('', include('productapp.urls')),
-    path('',include('coupon.urls')),
-    path('', include('userapp.urls')),
-    path('',include('attendence.urls')),
+    path('employee/', include('employee.urls')),
+    path('product/', include('productapp.urls')),
+    path('coupon/',include('coupon.urls')),
+    path('user/', include('userapp.urls')),
+    path('attendence/',include('attendence.urls')),
     path('', include('payroll.urls')),
-    path('', include('partner.urls')),
-    path('', include('promotions.urls')),
-    path('', include('customer.urls')),
+    path('partner/', include('partner.urls')),
+    path('promotions/', include('promotions.urls')),
+    path('customer/', include('customer.urls')),
+   
    
 
  ]

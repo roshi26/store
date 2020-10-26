@@ -1,0 +1,28 @@
+{% load rest_framework %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	<center>
+	<h1>CUSTOMER LOGIN</h1>
+	<style>
+		body{
+			background-color: #ffe6e6;
+		}
+	</style>
+	
+<form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            {% render_form serializer %}
+           
+        <br><br>
+            <input type="submit" class="btn btn-success" value=login>
+        </form>
+</body>
+</center>
+{% endblock content %}
+</html>

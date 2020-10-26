@@ -18,16 +18,22 @@ class ProductView(CreateView):
 			form=ProductForm(request.POST)
 			if form.is_valid():
 				form.save()
-				return HttpResponseRedirect('/list')
+				return HttpResponseRedirect('/product/list')
 		else:
 			form=ProductForm()
 		return render(request,'productapp/product_form.html',{'form':form})
+		
 
 class ProductListView(ListView):
 	model=Product
 	template_name='productapp/product_list.html'
 	fields=['name','created_at', 'price', 'quality','issue_by', 'issue_to', 'brand', 'quantity', 'coupon', 'discount']
 	context_object_name="object_list"
+	
+	def get_queryset(self):
+		return Product.objects.filter(created_by=self.request.user)
+	
+
 
 class ProductDetailView(DetailView):
 	model=Product
@@ -41,6 +47,7 @@ class ProductUpdateView(UpdateView):
 	fields=['name','created_at', 'price','quality', 'issue_by', 'issue_to','brand','coupon','issue_to','discount']
 	template_name='productapp/product_form.html'
 	success_url=reverse_lazy('product_list')
+
 
 	
 class ProductDeleteView(DeleteView):

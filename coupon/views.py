@@ -8,7 +8,7 @@ from django.urls import reverse_lazy
 
 
 # Create your views here.
-class Coupon_view(CreateView):
+class CouponView(CreateView):
 	
 	template_name='coupon/coupon_form.html'
 	form_class=CouponForm
@@ -20,34 +20,38 @@ class Coupon_view(CreateView):
 			form=CouponForm(request.POST)
 			if form.is_valid():
 				form.save()
-				return HttpResponseRedirect('/list')
+				return HttpResponseRedirect('/coupon/list')
 		else:
 			form=CouponForm()
 		return render(request,'coupon/coupon_form.html',{'form':form})
 
-class Coupon_list(ListView):
+
+class CouponList(ListView):
 	model=Coupon
 	template_name='coupon/coupon_list.html'
 	fields=['expiry_date', 'coupon_number', 'issue_by','issue_to','created_by','recieve_by','product']
 	context_object_name= 'coupons'
 
+	def get_queryset(self):
+		return Coupon.objects.filter(created_by=self.request.user)
 
 
-class Coupon_detail(DetailView):
+
+class CouponDetail(DetailView):
 	model=Coupon
 	template_name='coupon/coupon_detail.html'
 	context_object_name='coup'
 
 
 
-class Coupon_update(UpdateView):
+class CouponUpdate(UpdateView):
 	model=Coupon
 	fields=['expiry_date','coupon_number','issue_by','issue_to','created_by','recieve_by','product']
 	template_name='coupon/coupon_update.html'
 	success_url=reverse_lazy('Coupon_list')
 
 
-class Coupon_delete(DeleteView):
+class CouponDelete(DeleteView):
 	model=Coupon
 	template_name='coupon/coupon_confirm_delete.html'
 	success_url=reverse_lazy('Coupon_list')

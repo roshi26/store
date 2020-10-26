@@ -14,6 +14,8 @@ from employee.forms import EmployeeForm
 from datetime import datetime, timedelta
 from datetime import date
 import time
+
+
 class Registration(FormView):
     template_name='employee/employee_attendence_registration.html'
     form_class=EmployeeForm
@@ -26,7 +28,7 @@ class Registration(FormView):
                 user=form.save()
                 user.set_password(user.password)
                 user.save()
-                return HttpResponseRedirect('/login')
+            return HttpResponseRedirect('/attendence/login')
         else:
             form=EmployeeForm()
             my_dict={'form':form}
@@ -40,6 +42,7 @@ class LoginView(TemplateView):
 
     def get(self,request):
         return render(request,'attendence/login.html')
+
     
     def post(self,request):
     
@@ -64,15 +67,6 @@ class LogoutView(TemplateView):
         logout(request)
         return render(request,'attendence/login.html')
 
-
-
-class EmployeeListView(LoginRequiredMixin,ListView):
-    model=Employee
-    login_url='/login/'
-
-    template_name='employee/emp_attendence_list.html'
-    context_object_name="users"
-
     
 
 class EmployeeDetailView(LoginRequiredMixin,DetailView):
@@ -91,22 +85,14 @@ class EmployeeUpdateView(LoginRequiredMixin, UpdateView):
 
     template_name='employee/emp_attendence_update.html'
     context_object_name="user"
+    
 
 
     
     def get_success_url(self):
         
         employee_details=self.kwargs['pk']
-        return reverse_lazy('employee_details',kwargs={'pk':self.object.pk})
-
-    
-
-class EmployeeDeleteView(LoginRequiredMixin, DeleteView):
-    model=Employee
-    login_url='/login/'
-    template_name='employee/emp_attendence_delete.html'
-    context_object_name="user"
-
+        return reverse_lazy('employee_detailed',kwargs={'pk':self.object.pk})
 
 
 
@@ -145,13 +131,11 @@ class SignInView(LoginRequiredMixin,TemplateView):
 
 
 
-
-
 class SignoutView(LoginRequiredMixin,TemplateView):
     model=Attendence
     template_name='attendence/signout.html'
     login_url='/login/'
-    success_url=reverse_lazy('/login')
+    success_url=reverse_lazy('user_login')
 
 
 

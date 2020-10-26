@@ -1,0 +1,25 @@
+{% load rest_framework %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<center>
+<body>
+	<style>
+		body{
+			background-color: #ffe6e6;
+		}
+	</style>
+	<h1>CUSTOMER REGISTRATION FORM</h1>
+<form method="POST" action="{% url 'customer'  %}">
+            {% csrf_token %}
+            {% render_form serializer %}
+        <br><br>
+            <input type="submit" class="btn btn-success" value="submit">
+        </form>
+</body>
+</center>
+{% endblock content %}
+</html>

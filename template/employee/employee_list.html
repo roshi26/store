@@ -16,7 +16,7 @@
         
 				{% if employees %}
 				<table>
-					<table border="3">
+					<table width="100"; border="3"; height="50">
 						<thead>
 							<th>first_name</th>
 							<th>last_name</th>
@@ -42,9 +42,9 @@
                             	<td>{{x.start_date}}</td>
                             	<td>{{x.end_date}}</td>
                             	<td>
-                            		<a href='/update/{{x.pk}}' class='btn btn-warning'>update</a>  
-                            		<a href='/delete/{{x.pk}}' class ='btn btn-warning'>delete</a>
-                                    <a href='/detail/{{x.pk}}' class='btn btn-warning'>detail</a> 
+                            		<a href='/employee/update/{{x.pk}}' class='btn btn-warning'>update</a>  
+                            		<a href='/employee/delete/{{x.pk}}' class ='btn btn-warning'>delete</a>
+                                    <a href='/employee/detail/{{x.pk}}' class='btn btn-warning'>detail</a> 
                                 </td>
                             </tr>
                             {% endfor %}
@@ -56,7 +56,6 @@
             </div>
         </div>
     </div>
-
 </head>
 </html>
 {% endblock %}

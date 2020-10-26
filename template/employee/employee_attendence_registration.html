@@ -4,6 +4,18 @@
 <head>
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<h1>Employee Registration Form</h1>
+	<style>
+		body{
+			background-color: #92a8d1;
+			color:black;
+		}
+		button{
+		padding: 10px 26px ;
+		color: black;
+		background-color: white;
+
+	}
+	</style>
 </head>
 <body>
 <form method="post">
@@ -11,5 +23,9 @@
 	{{form.as_p}}
 	<input type="submit" class="btn btn-danger" value="submit">
 </form>
+<br><br>
+<div style="text-align" class="btn btn-danger">
+<button onclick= "location.href='http://127.0.0.1:8000/attendence/login/';">login</button>
+</div>
 </body>
 </html>

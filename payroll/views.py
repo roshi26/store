@@ -18,8 +18,6 @@ from calendar import monthrange
 
    
 class PayrollView(View):
-	template_name='payroll/payroll.html'
-	context_object_name="obj"
 	
         
 	def get(self,request):

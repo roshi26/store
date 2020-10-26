@@ -19,7 +19,7 @@ class PromotionView(CreateView):
 			form=PromotionsForm(request.POST)
 			if form.is_valid():
 				form.save()
-				return HttpResponseRedirect('/list')
+				return HttpResponseRedirect('/promotions/list')
 		else:
 			form=PromotionsForm()
 		return render(request,'promotions/promotions_form.html',{'form':form})
@@ -33,12 +33,17 @@ class PromotionList(ListView):
 	template_name='promotions/promotions_list.html'
 	fields=['day','created_at','modified_at','created_by','modified_by']
 	context_object_name='promotions'
-
+	
+	def get_queryset(self):
+		return Promotions.objects.filter(created_by=self.request.user)
+		
 
 class PromotionDetail(DetailView):
 	model=Promotions
 	template_name='promotions/promotions_detail.html'
 	context_object_name='pro'
+
+
 
 
 class PromotionUpdate(UpdateView):

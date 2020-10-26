@@ -10,7 +10,5 @@ def talk():
     	'cron works!',
     	'message',
     	'roshidubey2602@gmail.com',
-    	['roshidubey2602@gmail.com'],
-    	fail_silently=False,
-
-    	)
+    	['roshidubey2602@gmail.com'])
+    return None

@@ -16,7 +16,7 @@
         
 				{% if promotions %}
 				<table>
-					<table border="3">
+					<table width="100"; border="3"; height="50">
 						<thead>
 							<th>day</th>
 							<th>created_at</th>
@@ -32,9 +32,9 @@
 							<td>{{x.created_by}}</td>
 							<td>{{x.modified_by}}</td>
 							<td>
-								<a href='/promupdate/{{x.pk}}' class='btn btn-warning'>update</a>  
-                            	<a href='/promdelete/{{x.pk}}' class ='btn btn-warning'>delete</a>
-                                <a href='/promdetail/{{x.pk}}' class='btn btn-warning'>detail</a> 
+								<a href='/promotions/update/{{x.pk}}' class='btn btn-warning'>update</a>  
+                            	<a href='/promotions/delete/{{x.pk}}' class ='btn btn-warning'>delete</a>
+                                <a href='/promotions/detail/{{x.pk}}' class='btn btn-warning'>detail</a> 
                                 </td>
                             </tr>
                             {% endfor %}

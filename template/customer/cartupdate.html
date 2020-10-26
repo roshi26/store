@@ -1,0 +1,17 @@
+{% load rest_framework %}
+
+<html>
+<body>
+<style>
+		body{
+			background-color: #ffe6e6;
+		}
+	</style>
+
+<form action="{% url 'cart-update' pk=x.pk %}"method="PUT">
+    {% csrf_token %}
+    {% render_form serializer %}
+    <input type="submit" value="Save">
+</form>
+
+</body></html>

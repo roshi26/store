@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title> store management</title>
+	<center>
+	<h1>STORE MANAGEMENT </h1>
+	<br><br><br>
+</center>
+</head>
+<body>
+<style>
+	body{
+
+		background-image: url("{% static 'image/image5.png' %}");
+		background-size: cover;
+		color: blue;
+	}
+	button{
+		padding: 10px 26px ;
+		color: blue;
+		background-color: yellow;
+
+	}
+</style>
+<div style="text-align: center;">
+<button onclick= "location.href='http://127.0.0.1:8000/attendence/registration/';">EMPLOYEE PORTAL</button>
+
+<br><br><br>
+<button onclick= "location.href='http://127.0.0.1:8000/partner/registration/';">PARTNER PORTAL</button>
+<br><br><br>
+<button onclick= "location.href='http://127.0.0.1:8000/user/register/';">USER PORTAL</button>
+<br><br><br>
+<button onclick= "location.href='http://127.0.0.1:8000/admin/';">MY ADMIN</button>
+</div>
+</body>
+</html>

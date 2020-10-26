@@ -22,5 +22,9 @@ def register(request):
 		if form.is_valid():
 			user=form.save()
 			login(request,user)
-			return redirect(reverse("dashboard"))
+			return redirect(reverse("user_dashboard"))
 	return render(request, 'userapp/register.html')
+
+
+def store(request):
+	return render(request,'userapp/store.html')

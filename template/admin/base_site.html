@@ -5,8 +5,10 @@
 <h1 id="site-name"><a href = "{% url 'admin:index' %}">STORE MANAGEMENT</a></h1>
 
 
+{% if user.is_authenticated %}
+{% if user.is_staff and user.is_superuser %}
 
-
+{% else %}
 <h1><a href="/payroll" class="btn btn-success"></a></h1>
 
 
@@ -37,10 +39,10 @@
 	<input type="submit" id="a1" value=" generate payroll">
 	<input type="textbox" name="employee_id" value="10" id="a2">
   <input type="date" name="date" value="2020-10-06" id="a3">
-
-	
 	
 
 	</form>
 
+{% endif %}
+{% endif %}
 {% endblock %}

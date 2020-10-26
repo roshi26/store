@@ -13,7 +13,7 @@
             <div class="card-body">
             {% if coupons %}
             <table>
-                <table border="3">
+                <table width="100"; border="3"; height="50">
                     <thead>
                         <th>expiry_date</th>
                         <th>coupon_number</th>
@@ -33,9 +33,9 @@
                         <td>{{x.recieve_by}}</td>
                         <td>{{x.product}}</td>
                         <td>
-                            <a href='/couupdate/{{x.id}}' class='btn btn-warning'>update</a> 
-                            <a href='/coudelete/{{x.id}}' class ='btn btn-warning'>delete</a>
-                            <a href='/coudetail/{{x.id}}' class='btn btn-warning'>detail</a> 
+                            <a href='/coupon/update/{{x.id}}' class='btn btn-warning'>update</a> 
+                            <a href='/coupon/delete/{{x.id}}' class ='btn btn-warning'>delete</a>
+                            <a href='/coupon/detail/{{x.id}}' class='btn btn-warning'>detail</a> 
                         </td>
                     </tr>
                 {%endfor%}

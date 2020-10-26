@@ -5,7 +5,7 @@ from productapp import views
 urlpatterns = [
     path('view/', views.ProductView.as_view(), name='product_view'),
     path('list/',views.ProductListView.as_view(),name='product_list'),
-    path('prodetail/<int:pk>',views.ProductDetailView.as_view(), name='product_detail'),
-    path('proupdate/<int:pk>', views.ProductUpdateView.as_view(), name='product_update'),
-    path('prodelete/<int:pk>', views.ProductDeleteView.as_view(), name='product_delete')
+    path('detail/<int:pk>',views.ProductDetailView.as_view(), name='product_detail'),
+    path('update/<int:pk>', views.ProductUpdateView.as_view(), name='product_update'),
+    path('delete/<int:pk>', views.ProductDeleteView.as_view(), name='product_delete')
     ]

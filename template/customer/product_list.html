@@ -1,0 +1,43 @@
+
+<!-- {% load rest_framework %} 
+<form action="{% url 'product-list' %}"method="GET">
+    {% csrf_token %}
+    {% render_form serializer %}
+ 
+    <input type="submit" value="Save">
+</form>-->
+{{queryset}}
+<h1>PRODUCT LIST</h1>
+{% if product %}
+<ul> 
+<li>name</li>
+<li>created_at</li>
+<li>price</li>
+<li>quality</li>
+<li>issue_by</li>
+<li>issue_to</li>
+<li>last_updated</li>
+<li>quantity</li>
+<li>coupon</li>
+<li>brand</li>
+<li>discount</li>
+{% endif %}
+</ul>
+{% for x in product %}
+<ul>
+<li>{{x.name}}</li>
+<li>{{x.created_at}}</li>
+<li>{{x.price}}</li>
+<li>{{x.quality}}</li>
+<li>{{x.issue_by}}</li>
+<li>{{x.issue_to}}</li>
+<li>{{x.last_updated}}</li>
+<li>{{x.quantity}}</li>
+<li>{{x.coupon}}</li>
+<li>{{x.brand}}</li>
+<li>{{x.discount}}</li>
+</ul>
+{% endfor %}
+
+</body>
+</html>

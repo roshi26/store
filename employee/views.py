@@ -25,7 +25,7 @@ class EmployeeView(CreateView):
 				user=form.save()
 				user.set_password(user.password)
 				user.save()
-				return HttpResponseRedirect('/list')
+				return HttpResponseRedirect('/employee/list')
 			form=EmployeeForm()
 		return render(request,'employee/employee_form.html',{'form':form})
 	
@@ -36,6 +36,10 @@ class EmployeeList(ListView):
 	template_name='employee/employee_list.html'
 	fields=['first_name','last_name','id_number','phone_number','job_title','department','email','location','start_date','end_date']
 	context_object_name='employees'
+
+	def get_queryset(self):
+		return Employee.objects.filter(created_by=self.request.user)
+
 
 class EmployeeDetail(DetailView):
 	model=Employee

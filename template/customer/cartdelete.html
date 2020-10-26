@@ -1,0 +1,17 @@
+{% load rest_framework %}
+
+<html>
+<body>
+<style>
+		body{
+			background-color: #ffe6e6;
+		}
+	</style>
+<h1>are you sure you want to delete the cart
+<form action="{% url 'cart-delete' pk=x.pk %}"method="POST">
+    {% csrf_token %}
+    {% render_form serializer %}
+    <input type="submit" value="Save">
+</form>
+
+</body></html>
